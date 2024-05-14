@@ -1,0 +1,735 @@
+<header id="home_section">
+    <div class="app-header">
+        <div class="logo">
+            <a href="/">
+                <img class="logo-img" src="/assets/images/logo-large.png" alt="">
+            </a>
+        </div>
+        <div class="app_nav d-lg-block d-none">
+            <ul>
+                <li><a (click)="scrollToSection('home_section')" class="active">Home</a></li>
+                <li><a (click)="scrollToSection('feature_section')">Features</a></li>
+                <li><a (click)="scrollToSection('download_section')">Download</a></li>
+            </ul>
+        </div>
+        <a (click)="scrollToSection('download_section')" class="btn primary-btn d-lg-block d-none">Download now</a>
+
+        <div ngbDropdown class="mobile-nav-menu d-lg-none d-block">
+			<button type="button" class="btn dropdown-menu-btn" id="dropdownBasic1" ngbDropdownToggle>
+				<img src="/assets/icons/burger-menu.svg" width="32" alt="">
+			</button>
+			<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <ul>
+                    <li ngbDropdownItem><a (click)="scrollToSection('home_section')">Home</a></li>
+                    <li ngbDropdownItem><a (click)="scrollToSection('feature_section')">Features</a></li>
+                    <li ngbDropdownItem><a (click)="scrollToSection('download_section')">Download</a></li>
+                </ul>
+			</div>
+		</div>
+    </div>
+</header>
+
+<section class="app-banner">
+    <div class="app-banner-inner flex-lg-row flex-column card-max-width">
+        <div class="banner-left" data-aos="fade-zoom-in" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="400">
+            <div class="card-badge">😍 Match with real people</div>
+            <h1>You’ve Tried Dating, <br> Now It’s Time To <span class="gradient-text d-block">Get Matched</span></h1>
+            <div class="border-1 d-lg-block d-none"></div>
+            <div class="border-2 d-lg-block d-none"></div>
+            <p class="faded title">Be yourself with personality type-based matches</p>
+            <a (click)="scrollToSection('download_section')" class="btn primary-btn">Download now</a>
+        </div>
+        <div class="banner-right" data-aos="fade-zoom-in" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="400">
+            <div class="banner-img">
+                <img src="/assets/images/Group 14144.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="banner-icon-wrapper" id="targetSection">
+        <div class="banner-icon-info">
+            <div class="icon-placeholder blue">
+                <img src="/assets/icons/lovely.svg" width="24" alt="">
+            </div>
+            <p class="mb-0 ml-2"><span class="value-placeholder">{{ valueToAnimate }}</span> <span class="faded ml-1">Matches</span></p>
+        </div>
+        <div class="banner-icon-info flex-grow-1">
+            <div class="icon-placeholder pink">
+                <img src="/assets/icons/profile-2user.svg" width="24" alt="">
+            </div>
+            <p class="mb-0 ml-2"><span class="value-placeholder">{{ valueToAnimate2 }}</span> <span class="faded ml-1">Happy Users</span></p>
+        </div>
+        <div class="banner-icon-info">
+            <div class="icon-placeholder">
+                <img src="/assets/icons/star.svg" width="24" alt="">
+            </div>
+            <p class="m-0"><span class="rating-text">4.2/5</span> <span class="faded ml-1">Customer Rating</span></p>
+        </div>
+    </div>
+</section>
+
+<section id="targetSection" class="channel-wrapper card-max-width" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="600">
+    <img class="mb-3" src="/assets/images/M8_2023 1.png" width="68" alt="">
+    <h2>As Featured On <br> <span class="gradient-text d-block">MediaCorp Channel 8</span></h2>
+    <div class="channel-content-sec">
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/VcCGh2xRtQM"
+            title="This Dating App got Featured on National TV!" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</section>
+
+<div class="spacer-140"></div>
+
+<section class="best-feature-wrapper card-max-width" id="feature_section">
+    <h2 class="text-center">Our Best <span class="gradient-text">Features</span></h2>
+    <p class="sub-title faded text-center">Finding love is hard enough without having to deal with catfishing & ghosting. MatchMde makes it easy for you to focus on what’s important, being yourself on a date.</p>
+    <div class="best-feature-cards flex-lg-row flex-column">
+        <div class="b-f-card" data-aos="fade-up" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="100">
+            <div class="icon-placeholder">
+                <img src="/assets/icons/certificate-checkmark 1.svg" width="40" alt="">
+            </div>
+            <h5 class="mb-3">Verified Profiles</h5>
+            <p class="faded-grey">Get access to thousands of photo verified profiles. At least you'll know they are real.</p>
+        </div>
+        <div class="b-f-card" data-aos="fade-up" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="200">
+            <div class="icon-placeholder blue">
+                <img src="/assets/icons/home-modern-heart-like 1.svg" width="40" alt="">
+            </div>
+            <h5 class="mb-3">Curated Matches</h5>
+            <p class="faded-grey">Don't waste time swiping on random
+                profiles. Get access to curated profiles based on your unique personality.</p>
+        </div>
+        <div class="b-f-card" data-aos="fade-up" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="300">
+            <div class="icon-placeholder yellow">
+                <img src="/assets/icons/gift-heart 1.svg" width="40" alt="">
+            </div>
+            <h5 class="mb-3">Impress with gifts</h5>
+            <p class="faded-grey">Stand out by getting her a virtual gift. Gift messages come with a priority tag where they will be seen first, always.</p>
+        </div>
+        <div class="b-f-card" data-aos="fade-up" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="400">
+            <div class="icon-placeholder green">
+                <img src="/assets/icons/interface-essential-303 1.svg" width="40" alt="">
+            </div>
+            <h5 class="mb-3">Instant Matchmaking</h5>
+            <p class="faded-grey">Up your game with instant matching. Say hello to that special someone round the corner. Switch it on or off, your call.</p>
+        </div>
+    </div>
+</section>
+
+<div class="spacer-120"></div>
+
+<section class="get-app-section-wrapper" id="download_section">
+    <div class="get-app-content">
+        <div class="get-app-content-inner">
+            <div class="get-app-icon">
+                <img src="/assets/icons/Layer_1.svg" width="30" alt="">
+            </div>
+            <h2 class="text-primary mb-4 text-capitalize">Get the app now!</h2>
+            <p class="faded mb-5">No more sieving through fake profiles just to find a suitable match. Receive a fresh batch of specially curated profiles every day!</p>
+            <div class="get-app-stores">
+                <a href="https://play.google.com/store/apps/details?id=com.matchmde&hl=en&gl=SG"><img src="/assets/images/Google Play Badge.png" alt="google-play-store"></a>
+                <a href="https://apps.apple.com/sg/app/matchmde-ai-dating-real-people/id1467719153"><img src="/assets/images/App Store Badge.png" alt="google-play-store"></a>
+            </div>
+        </div>
+
+        <div class="get-app-main-image" data-aos="fade-up" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="600">
+            <img src="/assets/images/Group 14153.png" alt="">
+        </div>
+    </div>
+</section>
+
+<div class="spacer-120"></div>
+
+<section class="profile-verification">
+    <div class="prof-verf-left" data-aos="fade-right" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="300">
+        <img src="/assets/images/Frame 37111 (2).png" class="img-cover w-100" alt="">
+    </div>
+    <div class="prof-verf-right" data-aos="fade-left" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="400">
+        <div class="card-badge mb-4">A.I. Profile Verification</div>
+        <h2 class="mb-3 text-capitalize"><span class="gradient-text">No Catfish</span> in these ponds. Our AI takes care of that</h2>
+        <p class="faded mb-5">With our state of the art facial mapping technology, we'll cut away bots and get you connecting with real people.</p>
+        <button (click)="openVerticallyCentered(profilePhotoVerificationModal)" class="btn primary-btn">Learn More</button>
+    </div>
+</section>
+
+<div class="spacer-120"></div>
+
+<section class="personality-matching" data-aos="fade-up" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="600">
+    <div class="pers-match-left">
+        <div class="card-badge mb-4">A.I. Personality Matching</div>
+        <h2 class="mb-3 text-capitalize">Matching People based <span class="gradient-text">on personality</span></h2>
+        <p class="faded mb-5">Our AI Model calculates the compatibility score between each user. View the compatibility in even greater detail for each unique personality trait. No more blind dates!</p>
+        <button (click)="openVerticallyCentered(personalityMatchingModal)" class="btn primary-btn">Learn More</button>
+    </div>
+    <div class="pers-match-right">
+        <img src="/assets/images/Group 37438 (2) (1).png" class="img-cover w-100" alt="">
+    </div>
+</section>
+
+<div class="spacer-120"></div>
+
+<section class="match-engagement">
+    <div class="match-eng-left" data-aos="fade-right" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="300">
+        <div class="card-badge mb-4">A.I. Match Engagement</div>
+        <h2 class="mb-3 text-capitalize">Nervous about <span class="gradient-text">breaking the ice?</span> We'll do it for you</h2>
+        <p class="faded mb-5">Our A.I. helps you facilitate dates according to your pace. Choose a location, date and time, we will do the rest to set it up for you.</p>
+        <button (click)="openVerticallyCentered(matchEngagementModal)" class="btn primary-btn">Learn More</button>
+    </div>
+    <div class="match-eng-right" data-aos="fade-left" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="400">
+        <img src="/assets/images/Frame 37111 (1) (1).png" class="img-cover w-100" alt="">
+    </div>
+</section>
+
+<div class="spacer-120"></div>
+
+<section class="testimonial-section">
+    <h2 class="text-primary text-capitalize text-center">Reviews from our happy users</h2>
+    <div class="testimonial-slider">
+        <owl-carousel-o [options]="customOptions" class="owl-slider-main">
+            <ng-template carouselSlide>
+                <div class="test-card">
+                    <div class="test-user-icon">
+                        <img src="/assets/images/user-1.png" alt="">
+                        <img src="/assets/images/heart-emoji.png" alt="">
+                    </div>
+                    <div class="rating-star">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                    </div>
+                    <p class="test-message ellipse-three">Matchmde proved to be the key to my heart. With just a swipe, I found my soulmate, Rony.</p>
+                    <h5 class="test-user-name mb-1">Ken Lim</h5>
+                    <span class="test-message-date">2 days ago</span>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="test-card">
+                    <div class="test-user-icon">
+                        <img src="/assets/images/user-2.png" alt="">
+                        <img src="/assets/images/heart-emoji.png" alt="">
+                    </div>
+                    <div class="rating-star">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                    </div>
+                    <p class="test-message ellipse-three">Our connection was instant, and we embarked on a remarkable journey together. Thank you, Matchmde</p>
+                    <h5 class="test-user-name mb-1">Gina Chen</h5>
+                    <span class="test-message-date">12 days ago</span>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="test-card">
+                    <div class="test-user-icon">
+                        <img src="/assets/images/user-3.png" alt="">
+                        <img src="/assets/images/laugh-love-emoji.png" alt="">
+                    </div>
+                    <div class="rating-star">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                    </div>
+                    <p class="test-message ellipse-three">Meeting face-to-face on Matchmde was a turning point in our relationship.
+                        Jules and I had a magical first date that solidified our connection, and we’re grateful for the platform that made it possible.</p>
+                    <h5 class="test-user-name mb-1">Stephen Raj</h5>
+                    <span class="test-message-date">106 days ago</span>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="test-card">
+                    <div class="test-user-icon">
+                        <img src="/assets/images/user-4.png" alt="">
+                        <img src="/assets/images/laugh-love-emoji.png" alt="">
+                    </div>
+                    <div class="rating-star">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                        <img src="/assets/icons/star.svg" width="17" alt="">
+                    </div>
+                    <p class="test-message ellipse-three">It created a comfortable and safe environment, leading to a magical first date that set the tone for a lasting connection.”</p>
+                    <h5 class="test-user-name mb-1">Vivian Soh</h5>
+                    <span class="test-message-date">2 days ago</span>
+                </div>
+            </ng-template>
+              
+        </owl-carousel-o>
+    </div>
+</section>
+
+<div class="spacer-120"></div>
+
+<section class="date-spots-section">
+    <h2 class="text-primary text-capitalize text-center">Our Date Spots</h2>
+    <p class="faded text-center">Meet your dates at one of these places near you</p>
+
+    <div class="date-spots-list">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+            <li [ngbNavItem]="1">
+                <button ngbNavLink>
+                    <img src="/assets/icons/food.svg" width="24">
+                    <span>Food</span>
+                </button>
+                <ng-template ngbNavContent>
+                    <div class="date-spots-tab-content-wrapper">
+                        <div class="tab-content-cards-list">
+                            <div class="tab-content-card">
+                                <div class="tab-content-card-header">
+                                    <h5 class="m-0">My Awesome Cafe</h5>
+                                    <p class="m-0">
+                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <span>4.9</span>
+                                    </p>
+                                </div>
+                                <div class="tab-content-card-body">
+                                    <img src="/assets/images/Rectangle 39773.png" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-content-card">
+                                <div class="tab-content-card-header">
+                                    <h5 class="m-0">Free the Robot</h5>
+                                    <p class="m-0">
+                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <span>4.9</span>
+                                    </p>
+                                </div>
+                                <div class="tab-content-card-body">
+                                    <img src="/assets/images/Rectangle 39773 (1).png" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-content-card">
+                                <div class="tab-content-card-header">
+                                    <h5 class="m-0">Lola's Cafe</h5>
+                                    <p class="m-0">
+                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <span>4.9</span>
+                                    </p>
+                                </div>
+                                <div class="tab-content-card-body">
+                                    <img src="/assets/images/Rectangle 39773 (2).png" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-content-card">
+                                <div class="tab-content-card-header">
+                                    <h5 class="m-0">Monk's Brew Club</h5>
+                                    <p class="m-0">
+                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <span>4.9</span>
+                                    </p>
+                                </div>
+                                <div class="tab-content-card-body">
+                                    <img src="/assets/images/Rectangle 39773 (3).png" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-content-card">
+                                <div class="tab-content-card-header">
+                                    <h5 class="m-0">Esquina</h5>
+                                    <p class="m-0">
+                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <span>4.9</span>
+                                    </p>
+                                </div>
+                                <div class="tab-content-card-body">
+                                    <img src="/assets/images/Rectangle 39773 (4).png" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-content-card">
+                                <div class="tab-content-card-header">
+                                    <h5 class="m-0">The Populus</h5>
+                                    <p class="m-0">
+                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <span>4.9</span>
+                                    </p>
+                                </div>
+                                <div class="tab-content-card-body">
+                                    <img src="/assets/images/Rectangle 39773 (5).png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+                <button ngbNavLink>
+                    <span class="coming-soon">coming soon</span>
+                    <img src="/assets/icons/fashion.svg" width="24">
+                    <span>Fashion</span>
+                </button>
+            </li>
+            <li [ngbNavItem]="3">
+                <button ngbNavLink>
+                    <span class="coming-soon">coming soon</span>
+                    <img src="/assets/icons/shop.svg" width="24">
+                    <span>Shop</span>
+                </button>
+            </li>
+            <li [ngbNavItem]="4">
+                <button ngbNavLink>
+                    <span class="coming-soon">coming soon</span>
+                    <img src="/assets/icons/travel.svg" width="24">
+                    <span>Travel</span>
+                </button>
+            </li>
+            <li [ngbNavItem]="5">
+                <button ngbNavLink>
+                    <span class="coming-soon">coming soon</span>
+                    <img src="/assets/icons/movies.svg" width="24">
+                    <span>Movies</span>
+                </button>
+            </li>
+            <li [ngbNavItem]="6">
+                <button ngbNavLink>
+                    <span class="coming-soon">coming soon</span>
+                    <img src="/assets/icons/outing.svg" width="24">
+                    <span>Outings</span>
+                </button>
+            </li>
+            <li [ngbNavItem]="7">
+                <button ngbNavLink>
+                    <span class="coming-soon">coming soon</span>
+                    <img src="/assets/icons/fitness.svg" width="24">
+                    <span>Fitness</span>
+                </button>
+            </li>
+        </ul>
+        
+        <div [ngbNavOutlet]="nav" class="date-spots-tab-content"></div>
+
+        <!-- <div class="text-center tabs-load-more-btn">
+            <button class="btn secondary-btn">Load More</button>
+        </div> -->
+    </div>
+</section>
+
+<div class="spacer-120"></div>
+
+<section class="faq-section">
+    <div class="faq-content-wrapper">
+        <h2 class="text-primary text-capitalize text-center">Frequently asked questions</h2>
+
+        <div class="faq-questions flex-lg-row flex-column">
+            <div class="faq-questions-left" data-aos="fade-right" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="500">
+                <div class="faq-question">
+                    <div ngbAccordion #accordion="ngbAccordion">
+                        <div ngbAccordionItem="first" #first="ngbAccordionItem" [collapsed]="false">
+                            <div ngbAccordionHeader ngbAccordionToggle class="accordion-button faq-quest-header">
+                                <h5>Photo Verification is not working</h5>
+                                <button class="toggle-btn"></button>
+                            </div>
+                            <div ngbAccordionCollapse class="faq-quest-body">
+                                <div ngbAccordionBody>
+                                    <ng-template>
+                                    <p>Position your phone about 0.3m to 0.5m away from your face when you are at the verify photo screen.<br><br><br>
+                                        Look straight ahead, and hold your smile as you move your phone towards your face until you see a white flash, and your selfie is capture.<br><br><br>
+                                        Press verify and the App will let you know if it is successful.
+                                    </p>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                        <div ngbAccordionItem="second" #second="ngbAccordionItem" [collapsed]="true">
+                            <div ngbAccordionHeader ngbAccordionToggle class="accordion-button faq-quest-header">
+                                <h5>How does Match % compatibility work?</h5>
+                                <button class="toggle-btn"></button>
+                            </div>
+                            <div ngbAccordionCollapse class="faq-quest-body">
+                                <div ngbAccordionBody>
+                                    <ng-template>
+                                    <p>Your Match % comprises of a proprietary mix of personality questions to screen. which identifies two individuals’ compatibility. The higher the Match %, the higher the potential compatibility.</p>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-questions-right" data-aos="fade-left" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="500">
+                <div class="faq-question">
+                    <div ngbAccordion #accordion="ngbAccordion">
+                        <div ngbAccordionItem="third" #third="ngbAccordionItem" [collapsed]="true">
+                            <div ngbAccordionHeader ngbAccordionToggle class="accordion-button faq-quest-header">
+                                <h5>I didn’t verify my profile photo during sign up, now I can’t access the app.</h5>
+                                <button class="toggle-btn"></button>
+                            </div>
+                            <div ngbAccordionCollapse class="faq-quest-body">
+                                <div ngbAccordionBody>
+                                    <ng-template>
+                                    <p>For the safety of the community users, each user must verify their per mattis. puprofile photo before they can access the app. This deters potential spam bots and undesirable profiles from joining the community.</p>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                        <div ngbAccordionItem="fourth" #fourth="ngbAccordionItem" [collapsed]="true">
+                            <div ngbAccordionHeader ngbAccordionToggle class="accordion-button faq-quest-header">
+                                <h5>What are Gifts used for?</h5>
+                                <button class="toggle-btn"></button>
+                            </div>
+                            <div ngbAccordionCollapse class="faq-quest-body">
+                                <div ngbAccordionBody>
+                                    <ng-template>
+                                    <p>Gift messages are prioritized over other normal messages. When u send a gift. your message is seen first by the recipient, giving you an added edge to be noticed over other profiles.</p>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                        <div ngbAccordionItem="fifth" #fifth="ngbAccordionItem" [collapsed]="true">
+                            <div ngbAccordionHeader ngbAccordionToggle class="accordion-button faq-quest-header">
+                                <h5>What are match coins used for?</h5>
+                                <button class="toggle-btn"></button>
+                            </div>
+                            <div ngbAccordionCollapse class="faq-quest-body">
+                                <div ngbAccordionBody>
+                                    <ng-template>
+                                    <p>Match coins can be used to purchase Gift messages and also Boost</p>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <p class="faded mb-4">Still have a questions in mind? </p>
+            <a href="mailto:support@matchmde.com" class="btn primary-btn">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<div class="spacer-120"></div>
+
+<section class="our-community-section">
+    <div class="comunity-wrapper">
+        <h2 class="text-primary text-capitalize text-center mb-4">Our Community</h2>
+        <p class="com-sub-title faded mb-5 text-center">Discover the joys of connection, meaningful relationships, and endless possibilities within our vibrant community</p>
+        <div class="comunity-cards-main">
+            <div class="comunity-card" data-aos="fade-up" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="200">
+                <div class="card-image">
+                    <img src="/assets/images/community-image-1.png" alt="">
+                </div>
+                <h5 class="ellipse-two">Virtual Date Ideas</h5>
+                <p class="description ellipse-two">Last year, the world of dating changed forever. We had to stay indoors, therefore meeting someone and going out on a date if you were interested in getting to know them better was no longer an option. D...</p>
+                <div class="com-card-footer">
+                    <div>
+                        <i class="fa-regular fa-clock mr-2"></i>
+                        <span>23 Mar 2024</span>
+                    </div>
+                    <a href="https://matchmde.medium.com/" class="btn secondary-btn">Read More</a>
+                </div>
+            </div>
+            <div class="comunity-card" data-aos="fade-up" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="400">
+                <div class="card-image">
+                    <img src="/assets/images/community-image-2.png" alt="">
+                </div>
+                <h5 class="ellipse-two">Top 7 tips to help you prepare for the first date</h5>
+                <p class="description ellipse-two">Tonight (or today), you’ll be meeting the person you’ve been talking to online. Exciting and Nerve-wracking, right?
+                    That is why we want to help you prepare for it. The first rule before we get into the nitty-gritty, stop trying too hard to make it perfect. You are not the only one involved, so the only thing you can do is ensure you have a good time and make an excellent first impression. In the end, you might not even like the other person enough to want a second date, so calm down.</p>
+                <div class="com-card-footer">
+                    <div>
+                        <i class="fa-regular fa-clock mr-2"></i>
+                        <span>02 Nov 2023</span>
+                    </div>
+                    <a href="https://matchmde.medium.com/" class="btn secondary-btn">Read More</a>
+                </div>
+            </div>
+            <div class="comunity-card" data-aos="fade-up" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="600">
+                <div class="card-image">
+                    <img src="/assets/images/community-image-3.png" alt="">
+                </div>
+                <h5 class="ellipse-two">5 Dating Tips to Get A Second Date</h5>
+                <p class="description ellipse-two">You did it! You’re going on your first date with someone you’ve been talking to for a little while (how to prepare for the date), and you’re excited. You want everything to go smoothly, and if everything works out, you should be making plans for your second date before the first date is over.</p>
+                <div class="com-card-footer">
+                    <div>
+                        <i class="fa-regular fa-clock mr-2"></i>
+                        <span>09 Dec 2023</span>
+                    </div>
+                    <a href="https://matchmde.medium.com/" class="btn secondary-btn">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-all-btn text-center">
+            <a href="https://matchmde.medium.com/" class="btn secondary-btn">View All</a>
+        </div>
+    </div>
+</section>
+
+<div class="spacer-120"></div>
+
+<section data-aos="fade-up" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="400">
+    <div class="powered-by-wrapper">
+        <h2 class="text-primary text-capitalize text-center">Powered By</h2>
+        <div class="partners-group">
+            <img class="image-1" width="206" src="/assets/images/Nvidia Inception partner.png" alt="">
+            <img class="image-2" width="206" src="/assets/images/google partner.png" alt="">
+            <img class="image-3" width="125" src="/assets/images/Group.png" alt="">
+        </div>
+    </div>
+</section>
+
+<div class="spacer-120"></div>
+
+<section>
+    <div class="contact-us-wrapper flex-lg-row flex-column">
+        <div class="contact-left">
+            <div class="contact-details-main">
+                <div class="contact-left-item">
+                    <img src="/assets/icons/empty-wallet.svg" width="40" alt="">
+                    <div>
+                        <h5>Get in on Latest Offers</h5>
+                        <p>Receive promo codes from time to time</p>
+                    </div>
+                </div>
+                <div class="contact-left-item">
+                    <img src="/assets/icons/like.svg" width="40" alt="">
+                    <div>
+                        <h5>Be the first to experience </h5>
+                        <p>Get updates on our latest features</p>
+                    </div>
+                </div>
+                <div class="contact-left-item">
+                    <img src="/assets/icons/teacher.svg" width="40" alt="">
+                    <div>
+                        <h5>Get answers on issues </h5>
+                        <p>Or just get in touch with us for an issue you are experiencing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-right">
+            <div class="contact-right-form-wrapper">
+                <h3 class="text-primary">Send Us Message</h3>
+                <p class="sub-title faded">Join our mailing list for our mailers & <br> promotions</p>
+                <form class="contact-form">
+                    <div class="form-group-main flex-lg-row flex-column">
+                        <div class="form-group">
+                            <label for="">Name *</label>
+                            <input type="text" class="form-control" placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Subject *</label>
+                            <input type="text" class="form-control" placeholder="Feature request">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email *</label>
+                        <input type="email" class="form-control" placeholder=" john@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Details *</label>
+                        <textarea type="text" rows="3" class="form-control" placeholder="I want to have discount on places with matchmde coin"></textarea>
+                    </div>
+                    <div class="form-footer">
+                        <div class="accept-newsletter">
+                            <input type="checkbox" id="newsletter" class="d-none" checked>
+                            <label for="newsletter" class="">
+                                <span class="cstm-checkbox"></span>
+                                <span class="newsletter-text">I want to receive your daily newsletter.</span>
+                            </label>
+                        </div>
+                        <button class="btn primary-btn">Submit Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="spacer-120"></div>
+
+
+
+
+
+
+<footer class="footer-main">
+    <div class="footer-content-1" data-aos="fade-up" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="600">
+        <a href="/">
+            <img class="mb-5" src="/assets/icons/Layer_1.svg" width="32" alt="">
+        </a>
+        <h1 class="text-capitalize mb-5">Get your <span class="d-lg-inline d-block">match now</span></h1>
+        <div class="get-app-stores">
+            <a href="https://play.google.com/store/apps/details?id=com.matchmde&hl=en&gl=SG"><img src="/assets/images/Google Play Badge.png" alt="google-play-store"></a>
+            <a href="https://apps.apple.com/sg/app/matchmde-ai-dating-real-people/id1467719153"><img src="/assets/images/App Store Badge.png" alt="google-play-store"></a>
+        </div>
+        <div class="terms-cond">
+            <a href="">Terms & Conditions </a> | <a href=""> Privacy Policy</a>
+        </div>
+    </div>
+    <div class="footer-content-2">
+        <p>© 2024 Matchmde All Rights Reserved</p>
+        <div class="social-platforms">
+            <a href="https://twitter.com/MatchMdeApp" target="_blank"><img src="/assets/icons/Icon awesome-twitter.svg" width="25" alt="twitter"></a>
+            <a href="https://www.facebook.com/matchmde/" target="_blank"><img src="/assets/icons/Icon awesome-facebook.svg" width="25" alt="facebook"></a>
+            <a href="https://www.linkedin.com/company/matchmde" target="_blank"><img src="/assets/icons/Icon awesome-linkedin.svg" width="25" alt="linkedin"></a>
+            <a href="https://www.youtube.com/@matchmde9745" target="_blank"><img src="/assets/icons/Icon awesome-youtube.svg" width="25" alt="youtube"></a>
+        </div>
+    </div>
+</footer>
+
+
+<ng-template #profilePhotoVerificationModal let-modal>
+	<div class="match-modal-wrapper modal-body flex-lg-row flex-column">
+        <button (click)="modal.dismiss('Cross click')" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+		<div class="modal-wrapper-left">
+            <img src="/assets/images/iPhone 15 Pro Portrait Mockup.png" alt="">
+        </div>
+		<div class="modal-wrapper-right">
+            <div class="modal-wrapper-right-inner">
+                <h5>A.I. Profile Photo Verification</h5>
+                <p class="faded">Matchmde employs AI to analyze the disparity between a user's profile photo and their selfie. With a confidence threshold of 99.9%, catfishers and bots are swiftly identified and prevented from joining the platform.</p>
+                <p class="faded">Now, you can spend more time engaging in conversation and less time discerning whether someone is a bot.</p>
+                <div class="get-app-store">
+                    <a href="https://play.google.com/store/apps/details?id=com.matchmde&hl=en&gl=SG"><img src="/assets/images/Google Play Badge.png" alt=""></a>
+                    <a href="https://apps.apple.com/sg/app/matchmde-ai-dating-real-people/id1467719153"><img src="/assets/images/App Store Badge.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+	</div>
+</ng-template>
+<ng-template #personalityMatchingModal let-modal>
+	<div class="match-modal-wrapper modal-body flex-lg-row flex-column">
+        <button (click)="modal.dismiss('Cross click')" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+		<div class="modal-wrapper-left">
+            <img src="/assets/images/iPhone 15 Pro Portrait Mockup (1).png" alt="">
+        </div>
+		<div class="modal-wrapper-right">
+            <div class="modal-wrapper-right-inner">
+                <h5>A.I. Personality Matching</h5>
+                <p class="faded">Matchmde's AI model, affectionately known as M.I.L.A. (Matchmde Intelligent Love Assistant), utilizes sophisticated algorithms to suggest matches that closely align with your preferences and compatibility indicators.</p>
+                <p class="faded">Now, you have the opportunity to elevate your matching experience. By providing feedback after each date, M.I.L.A. will strive to refine and improve the compatibility of your subsequent matches.</p>
+                <div class="get-app-store">
+                    <a href="https://play.google.com/store/apps/details?id=com.matchmde&hl=en&gl=SG"><img src="/assets/images/Google Play Badge.png" alt=""></a>
+                    <a href="https://apps.apple.com/sg/app/matchmde-ai-dating-real-people/id1467719153"><img src="/assets/images/App Store Badge.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+	</div>
+</ng-template>
+<ng-template #matchEngagementModal let-modal>
+	<div class="match-modal-wrapper modal-body flex-lg-row flex-column">
+        <button (click)="modal.dismiss('Cross click')" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+		<div class="modal-wrapper-left">
+            <img src="/assets/images/iPhone 15 Pro Portrait Mockup (2).png" alt="">
+        </div>
+		<div class="modal-wrapper-right">
+            <div class="modal-wrapper-right-inner">
+                <h5>A.I. Engagement</h5>
+                <p class="faded">M.I.L.A. (Matchmde Intelligent Love Assistant), is equipped with advanced capabilities to gauge the liveliness of conversations between matches. In cases where interaction may be waning, M.I.L.A. can recommend personalized date ideas to reignite the spark and encourage users to transition from virtual to physical dates.</p>
+                <p class="faded">Additionally, M.I.L.A. employs generative suggestions to actively engage users in conversation and overcome communication barriers, ensuring that matches remain vibrant and engaging over time.</p>
+                <div class="get-app-store">
+                    <a href="https://play.google.com/store/apps/details?id=com.matchmde&hl=en&gl=SG"><img src="/assets/images/Google Play Badge.png" alt=""></a>
+                    <a href="https://apps.apple.com/sg/app/matchmde-ai-dating-real-people/id1467719153"><img src="/assets/images/App Store Badge.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+	</div>
+</ng-template>
