@@ -2,6 +2,9 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import * as AOS from 'aos';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/services/api.service';
+import { environment } from 'src/app/environment/environment';
 
 @Component({
   selector: 'app-main',
@@ -13,11 +16,17 @@ export class MainComponent implements OnInit {
   active = 1;
   valueToAnimate: number = 0;
   valueToAnimate2: number = 0;
-
+  sendMessageForm!: FormGroup;
+  isSubmitted: boolean = false;
+  message: string = '';
+  messageType:string = '';
+  captchaResolved: any
+  captchaResponse: any
+  siteKey: string = environment.recaptcha.siteKey;
 
   customOptions: OwlOptions = {
-    loop:true,
-    autoplay:true,
+    loop: true,
+    autoplay: true,
     mouseDrag: true,
     touchDrag: true,
     margin: 45,
@@ -25,7 +34,7 @@ export class MainComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 700,
-    nav:true,
+    nav: true,
     navText: [
       '<i class="fa-solid fa-chevron-left"></i>',
       '<i class="fa-solid fa-chevron-right"></i>',
@@ -46,12 +55,28 @@ export class MainComponent implements OnInit {
     },
   };
 
-  constructor(private modalService: NgbModal, private elementRef: ElementRef){
-
-  }
+  constructor(
+    private modalService: NgbModal,
+    private elementRef: ElementRef,
+    private _fb: FormBuilder,
+    private apiService: ApiService,
+  ) { }
 
   ngOnInit() {
     AOS.init();
+    this.initForm();
+  }
+  initForm() {
+    this.sendMessageForm = this._fb.group({
+      name: ['', Validators.required],
+      subject: ['', Validators.required],
+      // email: ['', Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i)],
+      email: ['', Validators.required],
+      details: ['', Validators.required]
+    });
+  }
+  get frmCtrl() {
+    return this.sendMessageForm.controls;
   }
 
   ngAfterViewInit() {
@@ -99,14 +124,74 @@ export class MainComponent implements OnInit {
   }
 
 
-  openVerticallyCentered(content:any) {
-		this.modalService.open(content, { windowClass: 'match-made-modal', backdropClass: 'match-made-modal-backdrop', centered: true, size: 'lg' });
-	}
+  openVerticallyCentered(content: any) {
+    this.modalService.open(content, { windowClass: 'match-made-modal', backdropClass: 'match-made-modal-backdrop', centered: true, size: 'lg' });
+  }
 
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
     }
+  }
+  submitForm() {
+    this.isSubmitted = true;
+    if (this.sendMessageForm.valid) {
+      const isCaptcha: any = this.captchaVerification();
+      if (!isCaptcha?.status) {
+        this.showMessage('Failed', 'alert-danger');
+        return
+      }
+      this.apiService.submitForm(this.sendMessageForm.value).subscribe({
+        next: (response) => {
+          if(response.status){
+            this.showMessage('Success', 'alert-success');
+          }else{
+            this.showMessage('Failed', 'alert-danger');
+          }
+          setTimeout(() => {
+            this.message = '';
+          }, 10000);
+        },
+        error: (error) => {
+          this.showMessage('Failed', 'alert-danger');
+          console.error(error);
+        }
+      });
+    }
+  }
+  showMessage(message: string, type: string): void {
+    this.message = message;
+    this.messageType = type;
+
+    setTimeout(() => {
+      this.message = '';
+    }, 5000); // Message will disappear after 5 seconds
+  }
+  captchaVerification() {
+    if (!this.captchaResolved) {
+      return;
+    }
+    const captchaPayload = {
+      "platform": "web",
+      "info": "",
+      "timestamp": Date.now(),
+      "token": this.captchaResponse
+    }
+    this.apiService.captchaVerification(captchaPayload).subscribe(
+      (response: any) => {
+        if (response.isSuccess === true) {
+          return response;
+        }
+      },
+      (error) => {
+        console.log("error", error);
+      }
+    );
+  }
+ 
+  onCaptchaResolved(captchaResponse: any): void {
+    this.captchaResolved = true;
+    this.captchaResponse = captchaResponse;
   }
 }
