@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import * as AOS from 'aos';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -46,11 +47,18 @@ export class MainComponent implements OnInit {
     },
   };
 
-  constructor(private modalService: NgbModal, private elementRef: ElementRef){
-
-  }
+  constructor(private modalService: NgbModal, 
+    private elementRef: ElementRef,
+    public activeRoute: ActivatedRoute,
+    private router: Router,
+  ){ }
 
   ngOnInit() {
+    this.activeRoute.fragment.subscribe(fragment => {
+      if(fragment){
+        this.scrollToSection(fragment);
+      }
+    });
     AOS.init();
   }
 
@@ -108,5 +116,8 @@ export class MainComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
     }
+  }
+  onClickHeader(event: any) {
+    this.scrollToSection(event.fragmentId)
   }
 }

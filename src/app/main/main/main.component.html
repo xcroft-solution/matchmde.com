@@ -1,4 +1,4 @@
-<header id="home_section">
+<!-- <header id="home_section">
     <div class="app-header">
         <div class="logo">
             <a href="/">
@@ -27,8 +27,8 @@
 			</div>
 		</div>
     </div>
-</header>
-
+</header> -->
+<app-header (formResponse)="onClickHeader($event)"></app-header>
 <section class="app-banner">
     <div class="app-banner-inner flex-lg-row flex-column card-max-width">
         <div class="banner-left" data-aos="fade-zoom-in" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="400">
@@ -41,7 +41,7 @@
         </div>
         <div class="banner-right" data-aos="fade-zoom-in" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="400">
             <div class="banner-img">
-                <img src="/assets/images/Group 14144.png" alt="">
+                <img src="/assets/images/Group_14144.png" alt="">
             </div>
         </div>
     </div>
@@ -142,7 +142,7 @@
 
 <section class="profile-verification">
     <div class="prof-verf-left" data-aos="fade-right" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="300">
-        <img src="/assets/images/Frame 37111 (2).png" class="img-cover w-100" alt="">
+        <img src="/assets/images/Frame_37111.png" class="img-cover w-100" alt="">
     </div>
     <div class="prof-verf-right" data-aos="fade-left" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="400">
         <div class="card-badge mb-4">A.I. Profile Verification</div>
@@ -162,7 +162,7 @@
         <button (click)="openVerticallyCentered(personalityMatchingModal)" class="btn primary-btn">Learn More</button>
     </div>
     <div class="pers-match-right">
-        <img src="/assets/images/Group 37438 (2) (1).png" class="img-cover w-100" alt="">
+        <img src="/assets/images/Group_37438.png" class="img-cover w-100" alt="">
     </div>
 </section>
 
@@ -176,7 +176,7 @@
         <button (click)="openVerticallyCentered(matchEngagementModal)" class="btn primary-btn">Learn More</button>
     </div>
     <div class="match-eng-right" data-aos="fade-left" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="400">
-        <img src="/assets/images/Frame 37111 (1) (1).png" class="img-cover w-100" alt="">
+        <img src="/assets/images/Frame_37111_2.png" class="img-cover w-100" alt="">
     </div>
 </section>
 
@@ -289,7 +289,7 @@
                                     </p>
                                 </div>
                                 <div class="tab-content-card-body">
-                                    <img src="/assets/images/Rectangle 39773.png" alt="">
+                                    <img src="/assets/images/Rectangle_39773.png" alt="">
                                 </div>
                             </div>
                             <div class="tab-content-card">
@@ -301,7 +301,7 @@
                                     </p>
                                 </div>
                                 <div class="tab-content-card-body">
-                                    <img src="/assets/images/Rectangle 39773 (1).png" alt="">
+                                    <img src="/assets/images/Rectangle_39773_1.png" alt="">
                                 </div>
                             </div>
                             <div class="tab-content-card">
@@ -313,7 +313,7 @@
                                     </p>
                                 </div>
                                 <div class="tab-content-card-body">
-                                    <img src="/assets/images/Rectangle 39773 (2).png" alt="">
+                                    <img src="/assets/images/Rectangle_39773_2.png" alt="">
                                 </div>
                             </div>
                             <div class="tab-content-card">
@@ -325,7 +325,7 @@
                                     </p>
                                 </div>
                                 <div class="tab-content-card-body">
-                                    <img src="/assets/images/Rectangle 39773 (3).png" alt="">
+                                    <img src="/assets/images/Rectangle_39773_3.png" alt="">
                                 </div>
                             </div>
                             <div class="tab-content-card">
@@ -337,7 +337,7 @@
                                     </p>
                                 </div>
                                 <div class="tab-content-card-body">
-                                    <img src="/assets/images/Rectangle 39773 (4).png" alt="">
+                                    <img src="/assets/images/Rectangle_39773_4.png" alt="">
                                 </div>
                             </div>
                             <div class="tab-content-card">
@@ -349,7 +349,7 @@
                                     </p>
                                 </div>
                                 <div class="tab-content-card-body">
-                                    <img src="/assets/images/Rectangle 39773 (5).png" alt="">
+                                    <img src="/assets/images/Rectangle_39773_5.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -650,7 +650,7 @@
 
 
 
-<footer class="footer-main">
+<!-- <footer class="footer-main">
     <div class="footer-content-1" data-aos="fade-up" data-aos-offset="" data-aos-easing="ease-in-sine" data-aos-duration="600">
         <a href="/">
             <img class="mb-5" src="/assets/icons/Layer_1.svg" width="32" alt="">
@@ -661,7 +661,7 @@
             <a href="https://apps.apple.com/sg/app/matchmde-ai-dating-real-people/id1467719153"><img src="/assets/images/App Store Badge.png" alt="google-play-store"></a>
         </div>
         <div class="terms-cond">
-            <a href="">Terms & Conditions </a> | <a href=""> Privacy Policy</a>
+            <a routerLink="/term-conditions">Terms & Conditions </a> | <a routerLink="/privacy-policy"> Privacy Policy</a>
         </div>
     </div>
     <div class="footer-content-2">
@@ -673,8 +673,8 @@
             <a href="https://www.youtube.com/@matchmde9745" target="_blank"><img src="/assets/icons/Icon awesome-youtube.svg" width="25" alt="youtube"></a>
         </div>
     </div>
-</footer>
-
+</footer> -->
+<app-footer></app-footer>
 
 <ng-template #profilePhotoVerificationModal let-modal>
 	<div class="match-modal-wrapper modal-body flex-lg-row flex-column">

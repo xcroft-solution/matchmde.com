@@ -5,11 +5,19 @@ import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main/main.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgbAccordionModule, NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { HeaderComponent } from './header/header.component';
+import { TermConditionsComponent } from './term-conditions/term-conditions.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    MainComponent
+    MainComponent,
+    PrivacyPolicyComponent,
+    HeaderComponent,
+    TermConditionsComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
