@@ -25,10 +25,7 @@ import { FooterComponent } from './footer/footer.component';
     CarouselModule,
     NgbNavModule,
     NgbAccordionModule,
-    NgbDropdownModule,
-    ReactiveFormsModule,
-    RecaptchaModule,
-    RecaptchaFormsModule
+    NgbDropdownModule
   ]
 })
 export class MainModule { }

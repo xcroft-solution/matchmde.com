@@ -3,6 +3,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import * as AOS from 'aos';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/services/api.service';
+import { environment } from 'src/app/environment/environment';
 
 @Component({
   selector: 'app-main',
@@ -58,6 +61,7 @@ export class MainComponent implements OnInit {
     private elementRef: ElementRef,
     private _fb: FormBuilder,
     private apiService: ApiService,
+    private activeRoute: ActivatedRoute,
   ) { }
 
   ngOnInit() {
