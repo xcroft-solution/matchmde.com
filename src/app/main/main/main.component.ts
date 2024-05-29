@@ -2,9 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import * as AOS from 'aos';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from 'src/app/services/api.service';
-import { environment } from 'src/app/environment/environment';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -63,6 +61,11 @@ export class MainComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.activeRoute.fragment.subscribe(fragment => {
+      if(fragment){
+        this.scrollToSection(fragment);
+      }
+    });
     AOS.init();
     this.initForm();
   }
