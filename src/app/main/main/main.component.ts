@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
   sendMessageForm!: FormGroup;
   isSubmitted: boolean = false;
   message: string = '';
-  messageType:string = '';
+  messageType: string = '';
   captchaResolved: any
   captchaResponse: any
   siteKey: string = environment.recaptcha.siteKey;
@@ -66,7 +66,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.activeRoute.fragment.subscribe(fragment => {
-      if(fragment){
+      if (fragment) {
         this.scrollToSection(fragment);
       }
     });
@@ -151,9 +151,9 @@ export class MainComponent implements OnInit {
       }
       this.apiService.submitForm(this.sendMessageForm.value).subscribe({
         next: (response) => {
-          if(response.status){
+          if (response.status) {
             this.showMessage('Success', 'alert-success');
-          }else{
+          } else {
             this.showMessage('Failed', 'alert-danger');
           }
           setTimeout(() => {
@@ -187,8 +187,10 @@ export class MainComponent implements OnInit {
     }
     this.apiService.captchaVerification(captchaPayload).subscribe(
       (response: any) => {
-        if (response.isSuccess === true) {
+        if (response.isSuccess) {
           return response;
+        } else {
+          this.showMessage(response.message, 'alert-danger');
         }
       },
       (error) => {
@@ -196,7 +198,7 @@ export class MainComponent implements OnInit {
       }
     );
   }
- 
+
   onCaptchaResolved(captchaResponse: any): void {
     this.captchaResolved = true;
     this.captchaResponse = captchaResponse;

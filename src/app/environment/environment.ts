@@ -1,5 +1,6 @@
 export const environment = {
-    recaptcha: {
-        siteKey: '6LfKNi0cAAAAACeYwFRY9_d_qjGhpiwYUo5gNW5-',
-      },
+  api_url: 'http://uat.matchmde.com/api/v1',
+  recaptcha: {
+    siteKey: '6LdieuQpAAAAAFztKRI6WOazNuSzANnWD3-fvJsn',
+  },
 }
