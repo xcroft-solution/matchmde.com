@@ -99,7 +99,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/aos/dist/aos.js"
+              "node_modules/aos/dist/aos.js",
+              "https://www.google.com/recaptcha/api.js"
             ]
           }
         }
@@ -107,6 +108,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "fedd6c59-2a38-4f53-a131-83187c845aea"
   }
 }
