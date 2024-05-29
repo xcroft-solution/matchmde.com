@@ -5,6 +5,8 @@ import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main/main.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgbAccordionModule, NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 
 
 @NgModule({
@@ -17,7 +19,10 @@ import { NgbAccordionModule, NgbDropdownModule, NgbNavModule } from '@ng-bootstr
     CarouselModule,
     NgbNavModule,
     NgbAccordionModule,
-    NgbDropdownModule
+    NgbDropdownModule,
+    ReactiveFormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ]
 })
 export class MainModule { }

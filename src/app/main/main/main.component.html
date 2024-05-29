@@ -608,24 +608,36 @@
             <div class="contact-right-form-wrapper">
                 <h3 class="text-primary">Send Us Message</h3>
                 <p class="sub-title faded">Join our mailing list for our mailers & <br> promotions</p>
-                <form class="contact-form">
+                <form [formGroup]="sendMessageForm" class="contact-form">
                     <div class="form-group-main flex-lg-row flex-column">
                         <div class="form-group">
                             <label for="">Name *</label>
-                            <input type="text" class="form-control" placeholder="John">
+                            <input formControlName="name" type="text" class="form-control" placeholder="John">
+                            <div class="text-danger" *ngIf="sendMessageForm.get('name')?.invalid && isSubmitted">
+                                Name is required
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="">Subject *</label>
-                            <input type="text" class="form-control" placeholder="Feature request">
+                            <input formControlName="subject" type="text" class="form-control" placeholder="Feature request">
+                            <div class="text-danger" *ngIf="sendMessageForm.get('subject')?.invalid && isSubmitted">
+                                Subject is required
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="">Email *</label>
-                        <input type="email" class="form-control" placeholder=" john@email.com">
+                        <input formControlName="email" type="email" class="form-control" placeholder=" john@email.com">
+                        <div class="text-danger" *ngIf="sendMessageForm.get('email')?.invalid && isSubmitted">
+                            Email is required
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="">Details *</label>
-                        <textarea type="text" rows="3" class="form-control" placeholder="I want to have discount on places with matchmde coin"></textarea>
+                        <textarea formControlName="details" type="text" rows="3" class="form-control" placeholder="I want to have discount on places with matchmde coin"></textarea>
+                        <div class="text-danger" *ngIf="sendMessageForm.get('details')?.invalid && isSubmitted">
+                            Details is required
+                        </div>
                     </div>
                     <div class="form-footer">
                         <div class="accept-newsletter">
@@ -635,7 +647,14 @@
                                 <span class="newsletter-text">I want to receive your daily newsletter.</span>
                             </label>
                         </div>
-                        <button class="btn primary-btn">Submit Now</button>
+                        <re-captcha (resolved)="onCaptchaResolved($event)" siteKey="{{siteKey}}"></re-captcha>
+                        <div class="text-danger" *ngIf="!captchaResolved && isSubmitted">
+                            Please complete the reCAPTCHA
+                          </div>
+                        <button (click)="submitForm()" class="btn primary-btn">Submit Now</button>
+                        <div *ngIf="message" class="alert" [ngClass]="messageType">
+                            {{ message }}
+                          </div>
                     </div>
                 </form>
             </div>
