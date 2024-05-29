@@ -16,8 +16,7 @@ import { RecaptchaFormsModule, RecaptchaModule, RecaptchaV3Module } from 'ng-rec
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RecaptchaModule,
-    RecaptchaFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

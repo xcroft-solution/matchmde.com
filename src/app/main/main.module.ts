@@ -9,6 +9,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { HeaderComponent } from './header/header.component';
 import { TermConditionsComponent } from './term-conditions/term-conditions.component';
 import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 
 
 @NgModule({
@@ -25,7 +27,10 @@ import { FooterComponent } from './footer/footer.component';
     CarouselModule,
     NgbNavModule,
     NgbAccordionModule,
-    NgbDropdownModule
+    NgbDropdownModule,
+    ReactiveFormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
   ]
 })
 export class MainModule { }

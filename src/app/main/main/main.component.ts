@@ -201,4 +201,7 @@ export class MainComponent implements OnInit {
     this.captchaResolved = true;
     this.captchaResponse = captchaResponse;
   }
+  onClickHeader(event: any) {
+    this.scrollToSection(event.fragmentId)
+  }
 }
