@@ -16,6 +16,19 @@ body{
     font-family: "Plus Jakarta Sans", sans-serif;
     color: var(--secondary-color);
     overflow-x: hidden;
+    position: relative;
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 560px;
+        background: linear-gradient(180deg, rgba(245, 188, 188, 0.2) 0%, rgba(245, 188, 188, 0) 100%);
+        pointer-events: none;
+        z-index: 1;
+    }
 }
 
 .gradient-text{
@@ -80,6 +93,10 @@ h3{
     font-weight: 700;
     letter-spacing: -2px;
 }
+h4{
+    font-size: 24px;
+    font-weight: 700;
+}
 h5{
     font-size: 20px;
     font-weight: 600;
@@ -139,4 +156,62 @@ p{
 }
 .match-made-modal-backdrop{
     z-index: 1040 !important;
+}
+
+.content-card{
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 30px;
+
+    &:last-child{
+        margin-bottom: 0 !important;
+    }
+
+    ul{
+        padding-left: 22px;
+        margin: 0;
+
+        li{
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+
+            &:not(:last-child){
+                margin-bottom: 22px;
+            }
+        }
+    }
+
+    ul.list-no-space li{
+        margin-bottom: 0 !important;
+    }
+
+    ol{
+        padding-left: 22px;
+        margin: 0;
+
+        li{
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+        }
+    }
+
+    h4{
+        text-transform: capitalize;
+        margin-bottom: 12px;
+    }
+
+    p{
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        line-height: 24px;
+        margin-top: 20px;
+    }
+    a{
+        color: var(--secondary-color);
+    }
+
 }

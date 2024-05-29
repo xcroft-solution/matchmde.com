@@ -1,0 +1,100 @@
+
+<section>
+    <div class="contact-us-wrapper flex-lg-row flex-column">
+        <div class="contact-left">
+            <div class="contact-details-main">
+                <div class="contact-left-item">
+                    <img src="/assets/icons/empty-wallet.svg" width="40" alt="">
+                    <div>
+                        <h5>Get in on Latest Offers</h5>
+                        <p>Receive promo codes from time to time</p>
+                    </div>
+                </div>
+                <div class="contact-left-item">
+                    <img src="/assets/icons/like.svg" width="40" alt="">
+                    <div>
+                        <h5>Be the first to experience </h5>
+                        <p>Get updates on our latest features</p>
+                    </div>
+                </div>
+                <div class="contact-left-item">
+                    <img src="/assets/icons/teacher.svg" width="40" alt="">
+                    <div>
+                        <h5>Get answers on issues </h5>
+                        <p>Or just get in touch with us for an issue you are experiencing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-right">
+            <div class="contact-right-form-wrapper">
+                <h3 class="text-primary">Send Us Message</h3>
+                <p class="sub-title faded">Join our mailing list for our mailers & <br> promotions</p>
+                <form class="contact-form" [formGroup]="contactForm">
+                    <div class="form-group-main flex-lg-row flex-column">
+                        <div class="form-group">
+                            <label for="">Name *</label>
+                            <input type="text" class="form-control" formControlName="name" placeholder="John">
+                            <span class="text-danger"
+                                *ngIf="(submitted) && contactFormControl['name'].errors?.['required']">
+                                Name is required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Subject *</label>
+                            <input type="text" class="form-control" formControlName="subject"
+                                placeholder="Feature request">
+                            <span class="text-danger"
+                                *ngIf="(submitted) && contactFormControl['subject'].errors?.['required']">
+                                Subject is required
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email *</label>
+                        <input type="email" class="form-control" formControlName="email" placeholder=" john@email.com">
+                        <span class="text-danger"
+                            *ngIf="(submitted) && contactFormControl['email'].errors?.['required']">
+                            Email is required
+                        </span>
+                        <span class="text-danger"
+                            *ngIf="contactFormControl['email'].touched && contactFormControl['email'].errors?.['email']">
+                            Enter a valid email address
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Details *</label>
+                        <textarea type="text" rows="3" formControlName="details" class="form-control"
+                            placeholder="I want to have discount on places with matchmde coin"></textarea>
+                        <span class="text-danger"
+                            *ngIf="(submitted) && contactFormControl['details'].errors?.['required']">
+                            Detail is required
+                        </span>
+                    </div>
+                    <div class="form-footer">
+                        <div class="accept-newsletter">
+                            <input type="checkbox" id="newsletter" formControlName="newsletter" class="d-none" checked>
+                            <label for="newsletter" class="">
+                                <span class="cstm-checkbox"></span>
+                                <span class="newsletter-text">I want to receive your daily newsletter.</span>
+                            </label>
+                        </div>
+                        <re-captcha (resolved)="onCaptchaResolved($event)" siteKey="{{siteKey}}"></re-captcha>
+                        <div class="text-danger" *ngIf="!captchaResolved && submitted">
+                            Please complete the reCAPTCHA
+                          </div>
+                        <button (click)="submitForm()" class="btn primary-btn">Submit Now</button>
+                        <div *ngIf="message" class="alert" [ngClass]="messageType">
+                            {{ message }}
+                          </div>
+                        <!-- <button [disabled]="isLoading" class="btn primary-btn" (click)="submit()">Submit Now
+                            <div class="spinner-border text-light" role="status" *ngIf="isLoading">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

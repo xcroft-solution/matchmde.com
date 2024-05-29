@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4200 -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
+  "author": {
+    "name": "Tauseef Arshad",
+    "email": "itauseefarshad@gmail.com"
+  },
   "dependencies": {
     "@angular/animations": "^16.2.12",
     "@angular/common": "^16.2.12",
@@ -19,9 +23,8 @@
     "@angular/platform-browser-dynamic": "^16.2.12",
     "@angular/router": "^16.2.12",
     "@ng-bootstrap/ng-bootstrap": "^15.1.2",
-    "@popperjs/core": "^2.11.8",
     "aos": "^2.3.4",
-    "ng-recaptcha": "^13.2.1",
+    "ng-recaptcha": "^12.0.2",
     "ngx-owl-carousel-o": "^16.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

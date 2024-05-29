@@ -6,6 +6,26 @@
     }
 }
 @media (max-width: 991.98px) {
+
+    .cookies-modal{
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0;
+        flex-direction: column;
+        padding: 20px !important;
+
+        .cookies-left{
+            img{
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        .cookies-right{
+            flex-direction: row-reverse !important;
+        }
+    }
+
     .app-banner{
         padding: 60px 10px 0px 10px !important;
 
@@ -39,6 +59,12 @@
     }
     .match-modal-wrapper .modal-wrapper-left{
         max-width: 100% !important;
+        max-height: 510px;
+    }
+    .match-modal-wrapper .modal-wrapper-left img{
+        position: relative;
+        // top: 50px;
+        width: 100%;
     }
     .match-modal-wrapper .modal-wrapper-right-inner{
         padding: 35px 30px !important;
@@ -94,6 +120,12 @@
 }
 
 @media (max-width: 767.98px) {
+    .privacy-policy{
+
+        .header-title{
+            margin-bottom: 50px !important;
+        }
+    }
     .com-card-footer{
 
         .secondary-btn{
@@ -142,7 +174,7 @@
     .app-banner{
 
         .banner-icon-wrapper{
-            margin-top: 0px !important;
+            margin-top: -100px !important;
         }
         
         .banner-icon-info{
@@ -276,5 +308,17 @@
 }
 
 @media (max-width: 574.98px) {
-    
+    .cookies-right{
+        button{
+            flex: 1;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
+}
+
+@media (max-width: 374.98px) {
+    .cookies-modal{
+        padding: 20px 9px !important;
+    }
 }

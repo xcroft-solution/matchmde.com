@@ -1,22 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
-import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-import { TermConditionsComponent } from './term-conditions/term-conditions.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { TermsComponent } from './terms/terms.component';
 
 const routes: Routes = [
+
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
     component: MainComponent
   },
   {
     path: 'privacy-policy',
-    component: PrivacyPolicyComponent
+    component: PrivacyComponent
   },
   {
     path: 'term-conditions',
-    component: TermConditionsComponent
-  }
+    component: TermsComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

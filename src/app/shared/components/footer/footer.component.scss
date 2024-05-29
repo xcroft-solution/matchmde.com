@@ -1,0 +1,72 @@
+.footer-main {
+    background-image: url('/assets/images/Frame\ 37145.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 16px;
+    color: #ffffff;
+
+    .footer-content-1 {
+        padding: 90px 0px;
+        text-align: center;
+
+        h1 {
+            font-size: 75px;
+            font-weight: normal;
+
+            span {
+                font-weight: bold;
+            }
+        }
+
+        .get-app-stores {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 2rem;
+
+            a {
+                max-width: 168px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+        }
+
+        .terms-cond {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+
+            a {
+                color: #ffffff;
+            }
+        }
+    }
+
+    .footer-content-2 {
+        max-width: 1200px;
+        margin: 0 auto;
+        border-top: 1.5px solid #ffffff26;
+        padding-top: 25px;
+        padding-bottom: 80px;
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .social-platforms {
+            display: flex;
+            gap: 25px;
+
+            img {
+                opacity: 0.6;
+            }
+        }
+    }
+}

@@ -2,10 +2,11 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import * as AOS from 'aos';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from 'src/app/services/api.service';
-import { environment } from 'src/app/environment/environment';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MainService } from 'src/app/shared/services/main.service';
+import { Subscription } from 'rxjs';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -14,16 +15,11 @@ import { environment } from 'src/app/environment/environment';
 })
 export class MainComponent implements OnInit {
 
+  showCookies: string = ''
   active = 1;
   valueToAnimate: number = 0;
   valueToAnimate2: number = 0;
-  sendMessageForm!: FormGroup;
-  isSubmitted: boolean = false;
-  message: string = '';
-  messageType: string = '';
-  captchaResolved: any
-  captchaResponse: any
-  siteKey: string = environment.recaptcha.siteKey;
+
 
   customOptions: OwlOptions = {
     loop: true,
@@ -56,38 +52,47 @@ export class MainComponent implements OnInit {
     },
   };
 
-  constructor(
-    private modalService: NgbModal,
-    private elementRef: ElementRef,
-    private _fb: FormBuilder,
-    private apiService: ApiService,
-    private activeRoute: ActivatedRoute,
-  ) { }
+  constructor(private modalService: NgbModal, private elementRef: ElementRef, private _service: MainService,
+    private route: ActivatedRoute,private router: Router
+  ) {
+
+  }
 
   ngOnInit() {
-    this.activeRoute.fragment.subscribe(fragment => {
-      if (fragment) {
-        this.scrollToSection(fragment);
+
+    this.route.queryParams.subscribe(params => {
+      const section = params['scrollTo'];
+      if (section) {
+        this.scrollToSection(section);
       }
     });
+
+    const permission = localStorage.getItem('cookiesPermissions')
+    this.showCookies = 'permit'
+    if (permission) {
+      this.showCookies = permission
+    } else {
+      setTimeout(() => {
+        this.showCookies = ''
+      }, 2000);
+    }
     AOS.init();
-    this.initForm();
+
+    this._service.nearByCafe().subscribe(x=> console.log(x))
+
   }
-  initForm() {
-    this.sendMessageForm = this._fb.group({
-      name: ['', Validators.required],
-      subject: ['', Validators.required],
-      // email: ['', Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i)],
-      email: ['', Validators.required],
-      details: ['', Validators.required]
-    });
-  }
-  get frmCtrl() {
-    return this.sendMessageForm.controls;
+
+  permitCookies() {
+    localStorage.setItem('cookiesPermissions', 'permit')
+    this.showCookies = 'permit'
   }
 
   ngAfterViewInit() {
-    AOS.refresh();
+    this.router.events.subscribe(event => {
+      if (event) {
+        AOS.refresh(); // Reinitialize AOS on route change
+      }
+    });
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -136,74 +141,11 @@ export class MainComponent implements OnInit {
   }
 
   scrollToSection(sectionId: string): void {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-    }
-  }
-  submitForm() {
-    this.isSubmitted = true;
-    if (this.sendMessageForm.valid) {
-      const isCaptcha: any = this.captchaVerification();
-      if (!isCaptcha?.status) {
-        this.showMessage('Failed', 'alert-danger');
-        return
-      }
-      this.apiService.submitForm(this.sendMessageForm.value).subscribe({
-        next: (response) => {
-          if (response.status) {
-            this.showMessage('Success', 'alert-success');
-          } else {
-            this.showMessage('Failed', 'alert-danger');
-          }
-          setTimeout(() => {
-            this.message = '';
-          }, 10000);
-        },
-        error: (error) => {
-          this.showMessage('Failed', 'alert-danger');
-          console.error(error);
-        }
-      });
-    }
-  }
-  showMessage(message: string, type: string): void {
-    this.message = message;
-    this.messageType = type;
-
     setTimeout(() => {
-      this.message = '';
-    }, 5000); // Message will disappear after 5 seconds
-  }
-  captchaVerification() {
-    if (!this.captchaResolved) {
-      return;
-    }
-    const captchaPayload = {
-      "platform": "web",
-      "info": "",
-      "timestamp": Date.now(),
-      "token": this.captchaResponse
-    }
-    this.apiService.captchaVerification(captchaPayload).subscribe(
-      (response: any) => {
-        if (response.isSuccess) {
-          return response;
-        } else {
-          this.showMessage(response.message, 'alert-danger');
-        }
-      },
-      (error) => {
-        console.log("error", error);
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
       }
-    );
-  }
-
-  onCaptchaResolved(captchaResponse: any): void {
-    this.captchaResolved = true;
-    this.captchaResponse = captchaResponse;
-  }
-  onClickHeader(event: any) {
-    this.scrollToSection(event.fragmentId)
+    }, 300);
   }
 }
