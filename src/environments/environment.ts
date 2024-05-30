@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api_url: 'http://uat.matchmde.com/api/v1/',
+  api_url: 'https://uat.matchmde.com/api/v1/',
   recaptcha: {
     siteKey: '6LdieuQpAAAAAFztKRI6WOazNuSzANnWD3-fvJsn',
 },//6LdieuQpAAAAAFztKRI6WOazNuSzANnWD3-fvJsn

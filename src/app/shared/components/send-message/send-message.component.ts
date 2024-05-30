@@ -62,20 +62,12 @@ export class SendMessageComponent implements OnInit {
   submitForm() {
     this.submitted = true;
     if (this.contactForm.valid) {
-      const isCaptcha: any = this.captchaVerification();
-      if (!isCaptcha?.status) {
-        this.showMessage('Failed', 'alert-danger');
-        return
-      }
       this._service.submitNewsLetter(this.contactForm.value).subscribe({
         next: (response: any) => {
           if (response.status) {
             this.contactForm.reset();
             this.submitted = false;
             this.showMessage('Success', 'alert-success');
-          } else {
-            this.submitted = false;
-            this.showMessage('Failed', 'alert-danger');
           }
           setTimeout(() => {
             this.message = '';
@@ -83,7 +75,6 @@ export class SendMessageComponent implements OnInit {
         },
         error: (error) => {
           this.submitted = false;
-          this.showMessage('Failed', 'alert-danger');
           console.error(error);
         }
       });
@@ -97,35 +88,11 @@ export class SendMessageComponent implements OnInit {
       this.message = '';
     }, 5000); // Message will disappear after 5 seconds
   }
-  captchaVerification() {
-    if (!this.captchaResolved) {
-      return;
-    }
-    const captchaPayload = {
-      "platform": "web",
-      "info": "",
-      "timestamp": Date.now(),
-      "token": this.captchaResponse
-    }
-    this._service.verifyCaptcha(captchaPayload).subscribe(
-      (response: any) => {
-        if (response.isSuccess) {
-          return response;
-        } else {
-          this.showMessage(response.message, 'alert-danger');
-        }
-      },
-      (error) => {
-        console.log("error", error);
-      }
-    );
-  }
 
   onCaptchaResolved(captchaResponse: any): void {
     this.captchaResolved = true;
     this.captchaResponse = captchaResponse;
   }
-
 
 
   ngOnDestroy() {
