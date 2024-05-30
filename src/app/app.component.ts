@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'match-made';
+  loading:boolean = false;
 constructor() { }
 ngOnInit(): void {
+  setTimeout(() => {
+    this.loading = true;
+  }, 200);
 }
 }
