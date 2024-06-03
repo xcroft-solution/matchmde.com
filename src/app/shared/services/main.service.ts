@@ -15,7 +15,7 @@ export class MainService {
   verifyCaptcha(data: any) {
     return this.http.post(API_URL + API_ENDPOINTS.captchaVerification, data)
   }
-  nearByCafe() {
-    return this.http.get(API_URL + API_ENDPOINTS.nearByCafe)
+  nearByCafe(payload:any) {
+    return this.http.post(API_URL + API_ENDPOINTS.nearByCafe,payload)
   }
 }

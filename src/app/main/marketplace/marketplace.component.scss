@@ -1,0 +1,130 @@
+.date-spots-section {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .nav-tabs {
+        border: 0;
+        margin-top: 55px;
+        margin-bottom: 60px;
+        gap: 20px;
+        justify-content: center;
+
+        .nav-link {
+            background: #ffffff;
+            border-radius: 44px;
+            padding: 8px 25px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            background-clip: padding-box;
+            margin-bottom: 0;
+            border: 0;
+            color: #22172A;
+
+            &::before {
+                content: "";
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                margin: -3px;
+                border-radius: inherit;
+                background: linear-gradient(278.61deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 0%);
+                position: absolute;
+            }
+
+            .coming-soon {
+                position: absolute;
+                left: 0;
+                width: 82px;
+                margin: auto;
+                box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.06);
+                background: #ffffff;
+                border-radius: 50px;
+                right: 0;
+                padding: 1px 1px 4px 1px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 9px;
+                text-transform: uppercase;
+                top: -15px;
+                color: #656565;
+            }
+
+            &.active::before {
+                background: linear-gradient(278.61deg, #F94892 -7.83%, #FF7F3F 115.19%);
+            }
+        }
+    }
+
+    .date-spots-tab-content-wrapper {
+
+        .tab-content-cards-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-gap: 30px;
+
+            .tab-content-card {
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.02), 0px 2px 4px rgba(0, 0, 0, 0.08);
+                border-radius: 18px;
+                background: #FFFFFF;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.02);
+                }
+
+                .tab-content-card-header {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 23px;
+
+                    h5 {
+                        font-size: 21px;
+                        font-weight: bold;
+                    }
+
+                    p {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.25rem;
+                        font-size: 16px;
+                    }
+                }
+
+                .tab-content-card-body {
+                    height: 200px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+
+    .tabs-load-more-btn {
+        margin-top: 35px;
+    }
+
+    .truncated-text{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        max-width: 275px;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        position: relative;
+        top: -3px;
+        left: 10px;
+    }
+    
+}
