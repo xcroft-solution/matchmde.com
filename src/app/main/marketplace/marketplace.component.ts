@@ -8,7 +8,7 @@ import { MainService } from 'src/app/shared/services/main.service';
 })
 export class MarketplaceComponent {
   active = 1;
-  marketPlacesData: any
+  marketPlacesData: any = [];
   latitude: any
   longitude: any
   constructor(private _service: MainService) { }
@@ -23,7 +23,7 @@ export class MarketplaceComponent {
       longitude: longitude
     }
     this._service.nearByCafe(payload).subscribe((res: any) => {
-      this.marketPlacesData = res.data;
+      this.marketPlacesData = res?.data;
       this.marketPlacesData.length > 0 && this.marketPlacesData.filter((item: any) => {
         if (item.photos.length == 0) {
           item.photos.push('/assets/images/cafe-default.jpg')
