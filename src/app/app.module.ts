@@ -28,8 +28,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true,
-  },
-  { provide: LocationStrategy, useClass: HashLocationStrategy }],
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

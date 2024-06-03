@@ -7,7 +7,7 @@ export const environment = {
   api_url: 'https://uat.matchmde.com/api/v1/',
   recaptcha: {
     siteKey: '6LdieuQpAAAAAFztKRI6WOazNuSzANnWD3-fvJsn',
-},//6LdieuQpAAAAAFztKRI6WOazNuSzANnWD3-fvJsn
+},
 };
 
 /*
