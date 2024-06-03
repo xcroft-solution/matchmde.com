@@ -913,24 +913,3 @@
 }
 
 
-
-.coming_soon{
-    button{
-        padding-left: 100px;
-        padding-right: 100px;
-        &:hover{
-            background: #ffffff !important;
-            color: #22172A !important;
-        }
-    }
-}
-
-@media only screen and (max-width: 359px) {
- 
-.coming_soon{
-    button{
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-}   
-}

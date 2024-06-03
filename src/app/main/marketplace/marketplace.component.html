@@ -10,7 +10,7 @@
                     <span>Food</span>
                 </button>
                 <ng-template ngbNavContent>
-                    <div class="date-spots-tab-content-wrapper">
+                    <div class="date-spots-tab-content-wrapper" *ngIf="marketPlacesData.length>0">
                         <div class="tab-content-cards-list">
                             <div *ngFor="let item of marketPlacesData" class="tab-content-card">
                                 <div class="tab-content-card-header">
@@ -21,9 +21,10 @@
                                     </p>
                                 </div>
                                 <div class="tab-content-card-body">
-                                  <img [src]="item.photos[0]" alt="{{item.name}}">
+                                    <img [src]="item.photos[0]" alt="{{item.name}}">
                                 </div>
                             </div>
+
                             <!-- <div class="tab-content-card">
                                 <div class="tab-content-card-header">
                                     <h5 class="m-0">Free the Robot</h5>
@@ -85,6 +86,9 @@
                                 </div>
                             </div> -->
                         </div>
+                    </div>
+                    <div class="text-center tabs-load-more-btn coming_soon" *ngIf="marketPlacesData.length==0">
+                        <button class="btn secondary-btn">Coming Soon</button>
                     </div>
                 </ng-template>
             </li>
@@ -169,4 +173,4 @@
         </div> -->
     </div>
 </section>
-<div *ngIf="marketPlacesData.length != 0" class="spacer-120"></div>
+<div  class="spacer-120"></div>
