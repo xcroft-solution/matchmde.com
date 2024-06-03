@@ -1,0 +1,172 @@
+<section class="date-spots-section">
+    <h2 class="text-primary text-capitalize text-center">Our Marketplace</h2>
+    <p class="faded text-center">Meet your dates at one of these places near you</p>
+
+    <div class="date-spots-list">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+            <li [ngbNavItem]="1">
+                <button ngbNavLink>
+                    <img src="/assets/icons/food.svg" width="24">
+                    <span>Food</span>
+                </button>
+                <ng-template ngbNavContent>
+                    <div class="date-spots-tab-content-wrapper">
+                        <div class="tab-content-cards-list">
+                            <div *ngFor="let item of marketPlacesData" class="tab-content-card">
+                                <div class="tab-content-card-header">
+                                    <h5 class="m-0 truncated-text" [title]="item.name">{{item.name}}</h5>
+                                    <p class="m-0">
+                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <span>{{item.rating}}</span>
+                                    </p>
+                                </div>
+                                <div class="tab-content-card-body">
+                                  <img [src]="item.photos[0]" alt="{{item.name}}">
+                                </div>
+                            </div>
+                            <!-- <div class="tab-content-card">
+                                <div class="tab-content-card-header">
+                                    <h5 class="m-0">Free the Robot</h5>
+                                    <p class="m-0">
+                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <span>4.9</span>
+                                    </p>
+                                </div>
+                                <div class="tab-content-card-body">
+                                    <img src="/assets/images/Rectangle 39773 (1).png" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-content-card">
+                                <div class="tab-content-card-header">
+                                    <h5 class="m-0">Lola's Cafe</h5>
+                                    <p class="m-0">
+                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <span>4.9</span>
+                                    </p>
+                                </div>
+                                <div class="tab-content-card-body">
+                                    <img src="/assets/images/Rectangle 39773 (2).png" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-content-card">
+                                <div class="tab-content-card-header">
+                                    <h5 class="m-0">Monk's Brew Club</h5>
+                                    <p class="m-0">
+                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <span>4.9</span>
+                                    </p>
+                                </div>
+                                <div class="tab-content-card-body">
+                                    <img src="/assets/images/Rectangle 39773 (3).png" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-content-card">
+                                <div class="tab-content-card-header">
+                                    <h5 class="m-0">Esquina</h5>
+                                    <p class="m-0">
+                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <span>4.9</span>
+                                    </p>
+                                </div>
+                                <div class="tab-content-card-body">
+                                    <img src="/assets/images/Rectangle 39773 (4).png" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-content-card">
+                                <div class="tab-content-card-header">
+                                    <h5 class="m-0">The Populus</h5>
+                                    <p class="m-0">
+                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <span>4.9</span>
+                                    </p>
+                                </div>
+                                <div class="tab-content-card-body">
+                                    <img src="/assets/images/Rectangle 39773 (5).png" alt="">
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+                <button ngbNavLink>
+                    <span class="coming-soon">coming soon</span>
+                    <img src="/assets/icons/fashion.svg" width="24">
+                    <span>Fashion</span>
+                </button>
+                <ng-template ngbNavContent>
+                    <div class="text-center tabs-load-more-btn coming_soon">
+                        <button class="btn secondary-btn">Coming Soon</button>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+                <button ngbNavLink>
+                    <span class="coming-soon">coming soon</span>
+                    <img src="/assets/icons/shop.svg" width="24">
+                    <span>Shop</span>
+                </button>
+                <ng-template ngbNavContent>
+                    <div class="text-center tabs-load-more-btn coming_soon">
+                        <button class="btn secondary-btn">Coming Soon</button>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="4">
+                <button ngbNavLink>
+                    <span class="coming-soon">coming soon</span>
+                    <img src="/assets/icons/travel.svg" width="24">
+                    <span>Travel</span>
+                </button>
+                <ng-template ngbNavContent>
+                    <div class="text-center tabs-load-more-btn coming_soon">
+                        <button class="btn secondary-btn">Coming Soon</button>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="5">
+                <button ngbNavLink>
+                    <span class="coming-soon">coming soon</span>
+                    <img src="/assets/icons/movies.svg" width="24">
+                    <span>Movies</span>
+                </button>
+                <ng-template ngbNavContent>
+                    <div class="text-center tabs-load-more-btn coming_soon">
+                        <button class="btn secondary-btn">Coming Soon</button>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="6">
+                <button ngbNavLink>
+                    <span class="coming-soon">coming soon</span>
+                    <img src="/assets/icons/outing.svg" width="24">
+                    <span>Outings</span>
+                </button>
+                <ng-template ngbNavContent>
+                    <div class="text-center tabs-load-more-btn coming_soon">
+                        <button class="btn secondary-btn">Coming Soon</button>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="7">
+                <button ngbNavLink>
+                    <span class="coming-soon">coming soon</span>
+                    <img src="/assets/icons/fitness.svg" width="24">
+                    <span>Fitness</span>
+                </button>
+                <ng-template ngbNavContent>
+                    <div class="text-center tabs-load-more-btn coming_soon">
+                        <button class="btn secondary-btn">Coming Soon</button>
+                    </div>
+                </ng-template>
+            </li>
+        </ul>
+
+        <div [ngbNavOutlet]="nav" class="date-spots-tab-content"></div>
+
+        <!-- <div class="text-center tabs-load-more-btn">
+            <button class="btn secondary-btn">Load More</button>
+        </div> -->
+    </div>
+</section>
+<div *ngIf="marketPlacesData.length != 0" class="spacer-120"></div>

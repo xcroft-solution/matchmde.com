@@ -78,7 +78,7 @@ export class MainComponent implements OnInit {
     }
     AOS.init();
 
-    this._service.nearByCafe().subscribe(x=> console.log(x))
+    // this._service.nearByCafe().subscribe(x=> console.log(x))
 
   }
 

@@ -9,12 +9,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
+import { MarketplaceComponent } from './marketplace/marketplace.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     PrivacyComponent,
     TermsComponent,
+    MarketplaceComponent,
     
   ],
   imports: [
