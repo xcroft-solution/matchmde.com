@@ -83,10 +83,9 @@
                         <div class="text-danger" *ngIf="!captchaResolved && submitted">
                             Please complete the reCAPTCHA
                           </div>
-                        <button (click)="submitForm()" class="btn primary-btn">Submit Now</button>
-                        <div *ngIf="message" class="alert" [ngClass]="messageType">
-                            {{ message }}
-                          </div>
+                        <button [disabled]="issubmitLoading" (click)="submitForm()" class="btn primary-btn">
+                            <i *ngIf="issubmitLoading" class="fas fa-spinner fa-spin"></i>
+                            Submit Now</button>
                         <!-- <button [disabled]="isLoading" class="btn primary-btn" (click)="submit()">Submit Now
                             <div class="spinner-border text-light" role="status" *ngIf="isLoading">
                                 <span class="sr-only">Loading...</span>
