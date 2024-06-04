@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MarketplaceComponent } from './marketplace/marketplace.component';
     PrivacyComponent,
     TermsComponent,
     MarketplaceComponent,
+    ContactusComponent,
     
   ],
   imports: [
