@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MainService } from '../../services/main.service';
 import { Subscription } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-send-message',
@@ -18,7 +19,7 @@ export class SendMessageComponent implements OnInit {
     newsletter: new FormControl(true)
   });
   submitted: boolean = false;
-
+  issubmitLoading: boolean = false;
   message: string = '';
   messageType: string = '';
   captchaResolved: any
@@ -61,17 +62,19 @@ export class SendMessageComponent implements OnInit {
 
   submitForm() {
     this.submitted = true;
-    if (this.contactForm.valid) {
+    if (this.contactForm.valid && this.captchaResolved) {
+      this.issubmitLoading = true;
       this._service.submitNewsLetter(this.contactForm.value).subscribe({
         next: (response: any) => {
-          if (response.status) {
+          if (response) {
             this.contactForm.reset();
             this.submitted = false;
-            this.showMessage('Success', 'alert-success');
+            this.issubmitLoading = false;
+            Swal.fire("We received your response!");
           }
-          setTimeout(() => {
-            this.message = '';
-          }, 10000);
+          // setTimeout(() => {
+          //   this.message = '';
+          // }, 10000);
         },
         error: (error) => {
           this.submitted = false;
