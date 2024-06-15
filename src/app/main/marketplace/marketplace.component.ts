@@ -26,7 +26,7 @@ export class MarketplaceComponent {
       this.marketPlacesData = res?.data;
       this.marketPlacesData.length > 0 && this.marketPlacesData.filter((item: any) => {
         if (item.photos.length == 0) {
-          item.photos.push('/assets/images/cafe-default.jpg')
+          item.photos.push('/assets/images/cafe-default.png')
         }
       })
     })
