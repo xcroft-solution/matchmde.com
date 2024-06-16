@@ -6,7 +6,7 @@
         <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
             <li [ngbNavItem]="1">
                 <button ngbNavLink>
-                    <img src="/assets/icons/food.svg" width="24">
+                    <img loading="lazy" src="/assets/icons/food.svg" width="24" height="24">
                     <span>Food</span>
                 </button>
                 <ng-template ngbNavContent>
@@ -16,12 +16,12 @@
                                 <div class="tab-content-card-header">
                                     <h5 class="m-0 truncated-text" [title]="item.name">{{item.name}}</h5>
                                     <p class="m-0">
-                                        <img src="/assets/icons/star.svg" width="18" alt="">
+                                        <img loading="lazy" src="/assets/icons/star.svg" width="18" alt="">
                                         <span>{{item.rating}}</span>
                                     </p>
                                 </div>
                                 <div class="tab-content-card-body">
-                                    <img [src]="item.photos[0]" alt="{{item.name}}">
+                                    <img loading="lazy" [src]="item.photos[0]" alt="{{item.name}}">
                                 </div>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
             <li [ngbNavItem]="2">
                 <button ngbNavLink>
                     <span class="coming-soon">coming soon</span>
-                    <img src="/assets/icons/fashion.svg" width="24">
+                    <img loading="lazy" src="/assets/icons/fashion.svg" width="24" height="24">
                     <span>Fashion</span>
                 </button>
                 <ng-template ngbNavContent>
@@ -46,7 +46,7 @@
             <li [ngbNavItem]="3">
                 <button ngbNavLink>
                     <span class="coming-soon">coming soon</span>
-                    <img src="/assets/icons/shop.svg" width="24">
+                    <img loading="lazy" src="/assets/icons/shop.svg" width="24" height="24">
                     <span>Shop</span>
                 </button>
                 <ng-template ngbNavContent>
@@ -58,7 +58,7 @@
             <li [ngbNavItem]="4">
                 <button ngbNavLink>
                     <span class="coming-soon">coming soon</span>
-                    <img src="/assets/icons/travel.svg" width="24">
+                    <img loading="lazy" src="/assets/icons/travel.svg" width="24" height="24">
                     <span>Travel</span>
                 </button>
                 <ng-template ngbNavContent>
@@ -70,7 +70,7 @@
             <li [ngbNavItem]="5">
                 <button ngbNavLink>
                     <span class="coming-soon">coming soon</span>
-                    <img src="/assets/icons/movies.svg" width="24">
+                    <img loading="lazy" src="/assets/icons/movies.svg" width="24" height="24">
                     <span>Movies</span>
                 </button>
                 <ng-template ngbNavContent>
@@ -82,7 +82,7 @@
             <li [ngbNavItem]="6">
                 <button ngbNavLink>
                     <span class="coming-soon">coming soon</span>
-                    <img src="/assets/icons/outing.svg" width="24">
+                    <img loading="lazy" src="/assets/icons/outing.svg" width="24" height="24">
                     <span>Outings</span>
                 </button>
                 <ng-template ngbNavContent>
@@ -94,7 +94,7 @@
             <li [ngbNavItem]="7">
                 <button ngbNavLink>
                     <span class="coming-soon">coming soon</span>
-                    <img src="/assets/icons/fitness.svg" width="24">
+                    <img loading="lazy" src="/assets/icons/fitness.svg" width="24" height="24">
                     <span>Fitness</span>
                 </button>
                 <ng-template ngbNavContent>
